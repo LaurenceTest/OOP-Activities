@@ -94,16 +94,16 @@ public class HourlyEmployee {
          double computedHours = totalHoursWorked / 40;
          double workHours = computedHours > 1 ? 1 : totalHoursWorked / 40;
          double overtime = computedHours > 1 ? computedHours - 1 : 0;
-         return (workHours * ratePerHour) + (overtime * (ratePerHour * 1.5));
+         return ((workHours * 40) * ratePerHour) + (overtime * (ratePerHour * 1.5));
      }
      
     public void displayInfo(){
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n"
-        + "Total Hours Worked: %f\nRate Per Hour: %f",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate,totalHoursWorked,ratePerHour); 
+        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
+        + "Total Hours Worked: %.2f\nRate Per Hour: %.2f\nSalary: %.2f\n",empID,empName,empDateHired,empDateHired.getMonth(),empDateHired,empBirthDate,empBirthDate.getMonth(),empBirthDate,totalHoursWorked,ratePerHour,computeSalary()); 
      }
 
     @Override
     public String toString() {
-        return "{"+ empID + ", " + empName + ", " + empDateHired + ", " + empBirthDate +'}';
+        return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
     }
 }

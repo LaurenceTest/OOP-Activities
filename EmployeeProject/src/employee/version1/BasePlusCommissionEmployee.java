@@ -92,16 +92,26 @@ public class BasePlusCommissionEmployee {
     }
     
     public double computeSalary(){
-        return baseSalary + (totalSales + 1000000);
+        double percentage = 0;
+        if (totalSales < 50000) {
+            percentage = 0.05;
+        } else if (totalSales >= 50000 && totalSales < 100000) {
+            percentage = 0.2;
+        } else if (totalSales >= 100000 && totalSales < 500000) {
+            percentage = 0.3;
+        } else if (totalSales >= 500000) {
+            percentage = 0.5;
+        }
+        return (totalSales * percentage) + baseSalary;
     }
     
     public void displayInfo(){
-    System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n"
-    +"Total Sales: %f\nBase Salary: %f",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate,totalSales,baseSalary);
+    System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
+    +"Total Sales: %.2f\nBase Salary: %.2f\nSalary: %.2f\n",empID,empName,empDateHired,empDateHired.getMonth(),empDateHired,empBirthDate,empBirthDate.getMonth(),empBirthDate,totalSales,baseSalary,computeSalary());
      }
 
     @Override
     public String toString() {
-        return "{"+ empID + ", " + empName + ", " + empDateHired + ", " + empBirthDate +'}';
+        return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
     }
 }

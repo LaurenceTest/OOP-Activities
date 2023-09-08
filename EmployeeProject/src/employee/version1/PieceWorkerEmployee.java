@@ -92,17 +92,17 @@ public class PieceWorkerEmployee {
     }
     
     public double computeSalary(){
-        double bonuses = totalPiecesFinished % 100;
+        double bonuses = totalPiecesFinished / 100;
         return (totalPiecesFinished * ratePerPiece) + (bonuses * (ratePerPiece * 10));
     }
     
     public void displayInfo(){
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n"
-        + "Total Pieces Finished: %d\nRate Per Piece: %f",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate,totalPiecesFinished,ratePerPiece);
+        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
+        + "Total Pieces Finished: %d\nRate Per Piece: %.2f\nSalary: %.2f\n",empID,empName,empDateHired,empDateHired.getMonth(),empDateHired,empBirthDate,empBirthDate.getMonth(),empBirthDate,totalPiecesFinished,ratePerPiece,computeSalary());
      }
 
     @Override
     public String toString() {
-        return "{"+ empID + ", " + empName + ", " + empDateHired + ", " + empBirthDate +'}';
+        return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
     }
 }
