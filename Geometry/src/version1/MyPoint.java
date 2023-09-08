@@ -62,28 +62,8 @@ public class MyPoint {
     }
 
     public double getAngle(){
-        double angle = Math.toDegrees(Math.atan(Math.abs(y)/Math.abs(x)));
-        switch(getQuadrant()){
-            case 0 :
-                angle = 0;
-                break;
-            case 2 :
-                angle = 90 + angle;
-                break;
-            case 3:
-                angle = 180 + angle;
-                break;
-            case 4:
-                angle = 360 - angle;
-                break;
-            case 5:
-                angle = x > 0 ? 0 : 180;
-                break;
-            case 6:
-                angle = y > 0 ? 90 : 270;
-                break;
-        }
-        return angle;
+        double angle = Math.toDegrees(Math.atan2(y,x));
+        return angle < 0 ? angle + 360 : angle;
     }
     
     @Override
@@ -92,10 +72,11 @@ public class MyPoint {
     }
 
     public static void main(String[] args) throws Exception {
-        MyPoint coords1 = new MyPoint(10, 20);
+        MyPoint coords1 = new MyPoint(-1,0);
         System.out.println(coords1.toString());
         coords1.displayPoint();
-        System.out.println(Math.toDegrees(coords1.getAngle()));
-        coords1.getQuadrant();
+        System.out.println(coords1.getDistance(-10, 0));
+        System.out.printf("%.2f\n",coords1.getAngle());
+        System.out.println(coords1.getQuadrant());
     }
 }
