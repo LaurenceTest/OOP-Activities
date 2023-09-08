@@ -52,11 +52,38 @@ public class MyPoint {
     }
 
     public int getQuadrant(){
-        return 0;
+        if(x == 0 && y == 0) return 0;
+        if(y == 0) return 5;
+        if(x == 0) return 6;
+        if(x >= 0 && y >= 0) return 1;
+        if(x <= 0 && y >= 0) return 2;
+        if(x <= 0 && y <= 0) return 3;
+        if(x >= 0 && y <= 0) return 4;
     }
 
     public double getAngle(){
-        return Math.atan(y/x);
+        double angle = Math.toDegrees(Math.atan(Math.abs(y)/Math.abs(x)));
+        switch(getQuadrant()){
+            case 0 :
+                angle = 0;
+                break;
+            case 2 :
+                angle = 90 + angle;
+                break;
+            case 3:
+                angle = 180 + angle;
+                break;
+            case 4:
+                angle = 360 - angle;
+                break;
+            case 5:
+                angle = x > 0 ? 0 : 180;
+                break;
+            case 6:
+                angle = y > 0 ? 90 : 270;
+                break;
+        }
+        return angle;
     }
     
     @Override
