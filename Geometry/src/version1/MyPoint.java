@@ -59,6 +59,7 @@ public class MyPoint {
         if(x <= 0 && y >= 0) return 2;
         if(x <= 0 && y <= 0) return 3;
         if(x >= 0 && y <= 0) return 4;
+        return 0;
     }
 
     public double getAngle(){
