@@ -70,7 +70,7 @@ public class CommissionEmployee {
     }
 
     public void setTotalSales(double totalSales) {
-        this.totalSales = totalSales;
+        this.totalSales = totalSales > 0 ? totalSales : 0;
     }
     
     public double computeSalary(){

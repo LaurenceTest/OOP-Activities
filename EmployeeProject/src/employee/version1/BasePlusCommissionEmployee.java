@@ -80,7 +80,7 @@ public class BasePlusCommissionEmployee {
     }
 
     public void setTotalSales(double totalSales) {
-        this.totalSales = totalSales;
+        this.totalSales = totalSales > 0 ? totalSales : 0;
     }
 
     public double getBaseSalary() {
@@ -88,7 +88,7 @@ public class BasePlusCommissionEmployee {
     }
 
     public void setBaseSalary(double baseSalary) {
-        this.baseSalary = baseSalary;
+        this.baseSalary = baseSalary > 0 ? baseSalary : 0;
     }
     
     public double computeSalary(){

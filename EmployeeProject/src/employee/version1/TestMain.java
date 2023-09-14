@@ -14,9 +14,9 @@ import java.util.Date;
 public class TestMain {
     public static void main (String[] args){
         HourlyEmployee hourEmp = new HourlyEmployee(0,"Darwin",new Date(2020,10,10),new Date(2003,9,6),1,15);
-        PieceWorkerEmployee pieWorkEmp = new PieceWorkerEmployee(1,"digby",new Date(2023,7,4),new Date(1995,1,15),1,30);
-        CommissionEmployee commEmp = new CommissionEmployee(2,"digby",new Date(2023,7,4),new Date(1995,1,15),75000);
-        BasePlusCommissionEmployee baseCommEmp = new BasePlusCommissionEmployee(3,"digby",new Date(2023,7,4),new Date(1995,1,15),75000,20000);
+        PieceWorkerEmployee pieWorkEmp = new PieceWorkerEmployee(1,"Pagcor",new Date(2023,7,4),new Date(1995,1,15),120,30);
+        CommissionEmployee commEmp = new CommissionEmployee(2,"Cafrana",new Date(2023,7,4),new Date(1995,1,15),20000);
+        BasePlusCommissionEmployee baseCommEmp = new BasePlusCommissionEmployee(3,"digby",new Date(2023,7,4),new Date(1995,1,15),1000000,20000);
         hourEmp.displayInfo();
         pieWorkEmp.displayInfo();
         commEmp.displayInfo();

@@ -79,7 +79,7 @@ public class HourlyEmployee {
     }
 
     public void setTotalHoursWorked(float totalHoursWorked) {
-        this.totalHoursWorked = totalHoursWorked;
+        this.totalHoursWorked = totalHoursWorked > 0 ? totalHoursWorked : 0;
     }
 
     public float getRatePerHour() {
@@ -87,7 +87,7 @@ public class HourlyEmployee {
     }
 
     public void setRatePerHour(float ratePerHour) {
-        this.ratePerHour = ratePerHour;
+        this.ratePerHour = ratePerHour > 0 ? ratePerHour : 0;
     }
      
     public double computeSalary(){

@@ -80,7 +80,7 @@ public class PieceWorkerEmployee {
     }
 
     public void setTotalPiecesFinished(int totalPiecesFinished) {
-        this.totalPiecesFinished = totalPiecesFinished;
+        this.totalPiecesFinished = totalPiecesFinished > 0 ? totalPiecesFinished : 0;
     }
 
     public float getRatePerPiece() {
@@ -88,7 +88,7 @@ public class PieceWorkerEmployee {
     }
 
     public void setRatePerPiece(float ratePerPiece) {
-        this.ratePerPiece = ratePerPiece;
+        this.ratePerPiece = ratePerPiece > 0 ? ratePerPiece : 0;
     }
     
     public double computeSalary(){
