@@ -34,6 +34,7 @@ public class PieceWorkerEmployee {
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.totalPiecesFinished = totalPiecesFinished;
+        ratePerPiece = 0;
     }
 
     public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
@@ -41,6 +42,17 @@ public class PieceWorkerEmployee {
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
+        totalPiecesFinished = 0;
+        ratePerPiece = 0;
+    }
+    
+    public PieceWorkerEmployee(){
+        empID = -1;
+        empName = "undefined";
+        empDateHired = new Date(0, 0, 0);
+        empBirthDate = new Date(0, 0, 0);
+        ratePerPiece = 0;
+        totalPiecesFinished = 0;
     }
 
     public int getEmpID() {

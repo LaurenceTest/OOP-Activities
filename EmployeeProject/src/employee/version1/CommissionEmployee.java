@@ -31,6 +31,15 @@ public class CommissionEmployee {
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
+        totalSales = 0;
+    }
+
+    public CommissionEmployee() {
+        empID = -1;
+        empName = "undefined";
+        empDateHired = new Date(0, 0, 0);
+        empBirthDate = new Date(0, 0, 0);
+        totalSales = 0;
     }
 
     public int getEmpID() {

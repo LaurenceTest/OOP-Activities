@@ -34,13 +34,27 @@ public class HourlyEmployee {
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.ratePerHour = ratePerHour;
+        totalHoursWorked = 0;
     }
     
     public HourlyEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
         this.empName = empName;
         this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+        ratePerHour = 0;
+        totalHoursWorked = 0;
     }
+
+    public HourlyEmployee() {
+        empID = -1;
+        empName = "undefined";
+        empDateHired = new Date(0, 0, 0);
+        empBirthDate = new Date(0, 0, 0);
+        ratePerHour = 0;
+        totalHoursWorked = 0;
+    }
+    
 
     public int getEmpID() {
         return empID;
