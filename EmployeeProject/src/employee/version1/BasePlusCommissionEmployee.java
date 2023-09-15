@@ -34,6 +34,7 @@ public class BasePlusCommissionEmployee {
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.totalSales = totalSales;
+        baseSalary = 0;
     }
 
     public BasePlusCommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
@@ -41,6 +42,17 @@ public class BasePlusCommissionEmployee {
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
+        totalSales = 0;
+        baseSalary = 0;
+    }
+
+    public BasePlusCommissionEmployee() {
+        empID = -1;
+        empName = "undefined";
+        empDateHired = new Date(0, 0, 0);
+        empBirthDate = new Date(0, 0, 0);
+        totalSales = 0;
+        baseSalary = 0;
     }
 
     public int getEmpID() {
