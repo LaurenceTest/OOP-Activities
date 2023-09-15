@@ -63,7 +63,6 @@ public class HourlyEmployee extends Employee{
      }
 
     public void displayInfo(){
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
-        + "Total Hours Worked: %.2f\nRate Per Hour: %.2f\nSalary: %.2f\n",getEmpID(),getEmpName(),getEmpDateHired(),getEmpDateHired().getMonth(),getEmpDateHired(),getEmpBirthDate(),getEmpBirthDate().getMonth(),getEmpBirthDate(),totalHoursWorked,ratePerHour,computeSalary()); 
+        System.out.printf(this.toString() + "Total Hours Worked: %.2f\nRate Per Hour: %.2f\nSalary: %.2f\n",totalHoursWorked,ratePerHour,computeSalary()); 
      }
 }

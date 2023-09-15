@@ -112,8 +112,7 @@ public class HourlyEmployee {
      }
      
     public void displayInfo(){
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
-        + "Total Hours Worked: %.2f\nRate Per Hour: %.2f\nSalary: %.2f\n",empID,empName,empDateHired,empDateHired.getMonth(),empDateHired,empBirthDate,empBirthDate.getMonth(),empBirthDate,totalHoursWorked,ratePerHour,computeSalary()); 
+        System.out.printf(this.toString() + "Total Hours Worked: %.2f\nRate Per Hour: %.2f\nSalary: %.2f\n",totalHoursWorked,ratePerHour,computeSalary()); 
      }
 
     @Override

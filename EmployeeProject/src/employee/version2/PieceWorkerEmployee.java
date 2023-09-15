@@ -61,7 +61,6 @@ public class PieceWorkerEmployee extends Employee{
     }
 
     public void displayInfo() {
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
-                + "Total Pieces Finished: %d\nRate Per Piece: %.2f\nSalary: %.2f\n", getEmpID(),getEmpName(),getEmpDateHired(),getEmpDateHired().getMonth(),getEmpDateHired(),getEmpBirthDate(),getEmpBirthDate().getMonth(),getEmpBirthDate(), totalPiecesFinished, ratePerPiece, computeSalary());
+        System.out.printf(this.toString() + "Total Pieces Finished: %d\nRate Per Piece: %.2f\nSalary: %.2f\n", totalPiecesFinished, ratePerPiece, computeSalary());
     }
 }

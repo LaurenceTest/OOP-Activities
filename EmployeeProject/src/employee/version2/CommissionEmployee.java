@@ -47,7 +47,6 @@ public class CommissionEmployee extends Employee{
     }
 
     public void displayInfo() {
-        System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
-                + "Total Sales: %.2f\nSalary: %.2f\n", getEmpID(),getEmpName(),getEmpDateHired(),getEmpDateHired().getMonth(),getEmpDateHired(),getEmpBirthDate(),getEmpBirthDate().getMonth(),getEmpBirthDate(), totalSales, computeSalary());
+        System.out.printf(this.toString() + "Total Sales: %.2f\nSalary: %.2f\n", totalSales, computeSalary());
     }
 }
