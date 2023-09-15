@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version1;
+package employee.version2;
 
 import java.util.Date;
 
@@ -11,37 +11,27 @@ import java.util.Date;
  *
  * @author User
  */
-public class CommissionEmployee {
+public class Employee {
     private int empID;
     private String empName;
     private Date empDateHired;
     private Date empBirthDate;
-    private double totalSales;
 
-    public CommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, double totalSales) {
+    public Employee(int empID, String empName, Date empDateHired, Date empBirthDate) {
         this.empID = empID;
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
-        this.totalSales = totalSales;
     }
 
-    public CommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
-        this.empID = empID;
-        this.empName = empName;
-        this.empDateHired = empDateHired;
-        this.empBirthDate = empBirthDate;
-        totalSales = 0;
-    }
-
-    public CommissionEmployee() {
+    public Employee() {
         empID = -1;
         empName = "undefined";
-        empDateHired = new Date(0, 0, 0);
-        empBirthDate = new Date(0, 0, 0);
-        totalSales = 0;
+        empDateHired = new Date(0,0,0);
+        empBirthDate = new Date(0,0,0);
     }
-
+    
+    
     public int getEmpID() {
         return empID;
     }
@@ -73,28 +63,7 @@ public class CommissionEmployee {
     public void setEmpBirthDate(Date empBirthDate) {
         this.empBirthDate = empBirthDate;
     }
-
-    public double getTotalSales() {
-        return totalSales;
-    }
-
-    public void setTotalSales(double totalSales) {
-        this.totalSales = totalSales > 0 ? totalSales : 0;
-    }
     
-    public double computeSalary(){
-        double percentage = 0;
-        if(totalSales < 50000) percentage = 0.05;
-        else if(totalSales >= 50000 && totalSales < 100000) percentage = 0.2;
-        else if(totalSales >= 100000 && totalSales < 500000) percentage = 0.3;
-        else if(totalSales >= 500000) percentage = 0.5;
-        return totalSales * percentage;
-    }
-    
-    public void displayInfo(){
-    System.out.printf(this.toString() +"Total Sales: %.2f\nSalary: %.2f\n",totalSales,computeSalary());
-     }
-
     @Override
     public String toString() {
         return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);

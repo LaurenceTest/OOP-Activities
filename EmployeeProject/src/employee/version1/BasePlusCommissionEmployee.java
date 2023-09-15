@@ -34,6 +34,7 @@ public class BasePlusCommissionEmployee {
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
         this.totalSales = totalSales;
+        baseSalary = 0;
     }
 
     public BasePlusCommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
@@ -41,6 +42,17 @@ public class BasePlusCommissionEmployee {
         this.empName = empName;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
+        totalSales = 0;
+        baseSalary = 0;
+    }
+
+    public BasePlusCommissionEmployee() {
+        empID = -1;
+        empName = "undefined";
+        empDateHired = new Date(0, 0, 0);
+        empBirthDate = new Date(0, 0, 0);
+        totalSales = 0;
+        baseSalary = 0;
     }
 
     public int getEmpID() {
@@ -106,8 +118,7 @@ public class BasePlusCommissionEmployee {
     }
     
     public void displayInfo(){
-    System.out.printf("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%d/%ty\nEmployee Birth Date: %td/%d/%ty\n"
-    +"Total Sales: %.2f\nBase Salary: %.2f\nSalary: %.2f\n",empID,empName,empDateHired,empDateHired.getMonth(),empDateHired,empBirthDate,empBirthDate.getMonth(),empBirthDate,totalSales,baseSalary,computeSalary());
+    System.out.printf(this.toString()+"Total Sales: %.2f\nBase Salary: %.2f\nSalary: %.2f\n",totalSales,baseSalary,computeSalary());
      }
 
     @Override
