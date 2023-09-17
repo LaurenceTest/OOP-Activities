@@ -11,22 +11,40 @@ import java.util.Date;
  *
  * @author User
  */
-public class Employee {
+public class Employee extends Name{
     private int empID;
-    private String empName;
     private Date empDateHired;
     private Date empBirthDate;
 
-    public Employee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public Employee(int empID, Name empName, Date empDateHired, Date empBirthDate) {
+        super(empName);
         this.empID = empID;
-        this.empName = empName;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+    }
+
+    public Employee(int empID, String firstName, String middleName, String lastName, Date empDateHired, Date empBirthDate, String ...suffix) {
+        setFirstName(firstName);
+        setMiddleName(middleName);
+        setLastName(lastName);
+        setSuffix(suffix);
+        this.empID = empID;
+        this.empDateHired = empDateHired;
+        this.empBirthDate = empBirthDate;
+    }
+
+    public Employee(int empID, String firstName, String middleName, String lastName, Date empDateHired, Date empBirthDate) {
+        setFirstName(firstName);
+        setMiddleName(middleName);
+        setLastName(lastName);
+        this.empID = empID;
         this.empDateHired = empDateHired;
         this.empBirthDate = empBirthDate;
     }
 
     public Employee() {
+        super();
         empID = -1;
-        empName = "undefined";
         empDateHired = new Date(0,0,0);
         empBirthDate = new Date(0,0,0);
     }
@@ -40,12 +58,8 @@ public class Employee {
         this.empID = empID;
     }
 
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
+    public String getEmpName(){
+        return super.toString();
     }
 
     public Date getEmpDateHired() {
@@ -66,6 +80,6 @@ public class Employee {
     
     @Override
     public String toString() {
-        return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName,empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
+        return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,getEmpName(),empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
     }
 }
