@@ -11,30 +11,8 @@ package employee.version4;
  */
 public class EmployeeRoster {
     private Employee []roster;
-    private int count = 0;
-    private int max = 10;
-    
-    EmployeeRoster(Employee []initial,int size){
-        if(size > initial.length){
-            roster = initial;
-            count = initial.length;
-            max = size;
-        }else{
-            count = 0;
-            max = 10;
-        }
-    }
-    
-    EmployeeRoster(Employee []initial){
-        roster = initial;
-        count = initial.length;
-        max = 10;
-    }
-    
-    EmployeeRoster(){
-        count = 0;
-        max = 10;
-    }
+    private int count;
+    private int MAX;
     
     
 }
