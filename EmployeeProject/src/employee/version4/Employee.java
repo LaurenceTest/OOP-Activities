@@ -80,5 +80,5 @@ public class Employee{
     @Override
     public String toString() {
         return String.format("Employee ID: %d\nEmployee Name: %s\nEmployee Date Hired: %td/%tm/%ty\nEmployee Birth Date: %td/%tm/%ty\n",empID,empName.toString(),empDateHired,empDateHired,empDateHired,empBirthDate,empBirthDate,empBirthDate);
-    }
+    }//USE STRING BUILDER
 }
