@@ -114,7 +114,7 @@ public class BasePlusCommissionEmployee {
         } else if (totalSales >= 500000) {
             percentage = 0.5;
         }
-        return (totalSales * percentage) + baseSalary;
+        return totalSales * percentage + baseSalary;
     }
     
     public void displayInfo(){

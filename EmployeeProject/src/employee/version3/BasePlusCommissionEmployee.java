@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author User
  */
-public class BasePlusCommissionEmployee extends Employee{
+public class BasePlusCommissionEmployee extends CommissionEmployee{
     private double totalSales;
     private double baseSalary;
     
@@ -55,6 +55,7 @@ public class BasePlusCommissionEmployee extends Employee{
         this.baseSalary = baseSalary > 0 ? baseSalary : 0;
     }
 
+    @Override
     public double computeSalary() {
         double percentage = 0;
         if (totalSales < 50000) {
@@ -69,6 +70,7 @@ public class BasePlusCommissionEmployee extends Employee{
         return (totalSales * percentage) + baseSalary;
     }
 
+    @Override
     public void displayInfo() {
         System.out.printf(this.toString() + "Total Sales: %.2f\nBase Salary: %.2f\nSalary: %.2f\n", totalSales, baseSalary, computeSalary());
     }
