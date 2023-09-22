@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version2;
+package employee.version3;
 
 import java.util.Date;
 
@@ -15,19 +15,19 @@ public class BasePlusCommissionEmployee extends CommissionEmployee{
     private double totalSales;
     private double baseSalary;
     
-    public BasePlusCommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, double totalSales, double baseSalary) {
+    public BasePlusCommissionEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, double totalSales, double baseSalary) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalSales = totalSales;
         this.baseSalary = baseSalary;
     }
 
-    public BasePlusCommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, double totalSales) {
+    public BasePlusCommissionEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, double totalSales) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalSales = totalSales;
         baseSalary = 0;
     }
 
-    public BasePlusCommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public BasePlusCommissionEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate) {
         super(empID, empName, empDateHired, empBirthDate);
         totalSales = 0;
         baseSalary = 0;
