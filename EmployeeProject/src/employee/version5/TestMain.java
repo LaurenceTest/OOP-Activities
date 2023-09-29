@@ -24,16 +24,14 @@ public class TestMain {
         EmployeeRoster roster = new EmployeeRoster();
         roster.addEmployee(hourEmp);
         roster.addEmployees(pieWorkEmp,commEmp,baseCommEmp,hourEmp2,hourEmp3,pieWorkEmp2,baseCommEmp2,baseCommEmp3);
-        roster.displayAllEmployees();
-        roster.displayTypeEmployees("Hourly Employee");
-        roster.displayTypeEmployees("Piece Worker Employee");
-        roster.displayTypeEmployees("Commission Employee");
-        roster.displayTypeEmployees("Base Commission Employee");
-        System.out.println(roster.getCount());
-        System.out.println(roster.countEmpType("Hourly Employee"));
-        for(Employee target : roster.searchEmployees("Stroheim")){
-            System.out.println(target.getEmpName());
-        }
-        roster.displayAllEmployees();
+        // roster.displayAllEmployees();
+        // roster.displayTypeEmployees("Hourly Employee");
+        // roster.displayTypeEmployees("Piece Worker Employee");
+        // roster.displayTypeEmployees("Commission Employee");
+        // roster.displayTypeEmployees("Base Plus Commission Employee");
+        // System.out.println(roster.getCount());
+        // System.out.println(roster.countEmpType("Hourly Employee"));
+        roster.searchEmployees("Stroheim").displayAllEmployees();
+        // roster.displayAllEmployees();
     }
 }

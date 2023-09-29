@@ -74,9 +74,9 @@ public class EmployeeRoster {
     }
 
     public int countEmpType(String type){
-        int empTypeCount = 0;
-        for(Employee target : roster){
-            if(getEmpType(target).equals(type)) empTypeCount++;
+        int empTypeCount = 0,i;
+        for(i = 0; i < count; i++){
+            if(getEmpType(roster[i]).equals(type)) empTypeCount++;
         }
         return empTypeCount;
     }
@@ -85,10 +85,10 @@ public class EmployeeRoster {
         StringBuilder displayString;
         for(int i = 0; i < count; i++){
             displayString = new StringBuilder();
-            displayString.append(roster[i].getEmpID() + " | ");
-            displayString.append(roster[i].getEmpName() + " | ");
-            displayString.append(getEmpType(roster[i]) + " | ");
-            displayString.append(String.format("%.2f",computeSalary(roster[i])));
+            displayString.append(String.format("%3d",roster[i].getEmpID()) + " | ");
+            displayString.append(String.format("%-35s",roster[i].getEmpName()) + " | ");
+            displayString.append(String.format("%-30s",getEmpType(roster[i])) + " | ");
+            displayString.append(String.format("%-10.2f",computeSalary(roster[i])));
             System.out.println(displayString);
         }
     }
@@ -98,10 +98,10 @@ public class EmployeeRoster {
         for(int i = 0; i < count; i++){
             if(getEmpType(roster[i]).equals(type)){
                 displayString = new StringBuilder();
-                displayString.append(roster[i].getEmpID() + " | ");
-                displayString.append(roster[i].getEmpName() + " | ");
-                displayString.append(getEmpType(roster[i]) + " | ");
-                displayString.append(String.format("%.2f",computeSalary(roster[i])));
+                displayString.append(String.format("%3d",roster[i].getEmpID()) + " | ");
+                displayString.append(String.format("%-35s",roster[i].getEmpName()) + " | ");
+                displayString.append(String.format("%-30s",getEmpType(roster[i])) + " | ");
+                displayString.append(String.format("%-10.2f",computeSalary(roster[i])));
                 System.out.println(displayString);
             }
         }
@@ -115,23 +115,21 @@ public class EmployeeRoster {
         }
     }
 
-    public Employee[] searchEmployees(String keyword){
+    public EmployeeRoster searchEmployees(String keyword){
         int resultCount = 0;
         Employee[] container = new Employee[MAX];
         for(int i = 0; i < count; i++){
             if(roster[i].getEmpName().toString().toLowerCase().contains(keyword.toLowerCase())) container[resultCount++] = roster[i];
         }
-        Employee[] results = new Employee[resultCount];
-        System.arraycopy(container,0,results,0,resultCount);
-        return results;
+        EmployeeRoster result = new EmployeeRoster(resultCount);
+        Employee[] resized = new Employee[resultCount];
+        System.arraycopy(container,0,resized,0,resultCount);
+        result.addEmployees(resized);
+        return result;
     }
 
     private String getEmpType(Employee target){
-        if(target instanceof HourlyEmployee) return "Hourly Employee";
-        if(target instanceof PieceWorkerEmployee) return "Piece Worker Employee";
-        if(target instanceof BasePlusCommissionEmployee) return "Base Commission Employee";
-        if(target instanceof CommissionEmployee) return "Commission Employee";
-        return "Not Found";
+        return target.getClass().getSimpleName().replaceAll("(.)([A-Z])","$1 $2");
     }
 
     private double computeSalary(Employee target){
