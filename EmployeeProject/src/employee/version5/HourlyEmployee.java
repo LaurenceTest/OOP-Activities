@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version2;
-
+package employee.version5;
 import java.util.Date;
 
 /**
@@ -15,19 +14,19 @@ public class HourlyEmployee extends Employee{
     private float totalHoursWorked;
     private float ratePerHour;
     
-    public HourlyEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, float totalHoursWorked, float ratePerHour) {
+    public HourlyEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, float totalHoursWorked, float ratePerHour) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalHoursWorked = totalHoursWorked;
         this.ratePerHour = ratePerHour;
     }
 
-    public HourlyEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, float ratePerHour) {
+    public HourlyEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, float ratePerHour) {
         super(empID, empName, empDateHired, empBirthDate);
         this.ratePerHour = ratePerHour;
         totalHoursWorked = 0;
     }
 
-    public HourlyEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public HourlyEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate) {
         super(empID, empName, empDateHired, empBirthDate);
         totalHoursWorked = 0;
         ratePerHour = 0;

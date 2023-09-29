@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version2;
-
+package employee.version5;
 import java.util.Date;
 
 /**
@@ -14,12 +13,12 @@ import java.util.Date;
 public class CommissionEmployee extends Employee{
     private double totalSales;
     
-    public CommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, double totalSales) {
+    public CommissionEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, double totalSales) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalSales = totalSales;
     }
 
-    public CommissionEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public CommissionEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate) {
         super(empID, empName, empDateHired, empBirthDate);
         totalSales = 0;
     }

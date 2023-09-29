@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version2;
-
+package employee.version5;
 import java.util.Date;
 
 /**
@@ -15,19 +14,19 @@ public class PieceWorkerEmployee extends Employee{
     private int totalPiecesFinished;
     private float ratePerPiece;
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
+    public PieceWorkerEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished, float ratePerPiece) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalPiecesFinished = totalPiecesFinished;
         this.ratePerPiece = ratePerPiece;
     }
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished) {
+    public PieceWorkerEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate, int totalPiecesFinished) {
         super(empID, empName, empDateHired, empBirthDate);
         this.totalPiecesFinished = totalPiecesFinished;
         ratePerPiece = 0;
     }
 
-    public PieceWorkerEmployee(int empID, String empName, Date empDateHired, Date empBirthDate) {
+    public PieceWorkerEmployee(int empID, Name empName, Date empDateHired, Date empBirthDate) {
         super(empID, empName, empDateHired, empBirthDate);
         totalPiecesFinished = 0;
         ratePerPiece = 0;
