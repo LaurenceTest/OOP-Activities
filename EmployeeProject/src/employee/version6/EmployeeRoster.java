@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version5;
+package employee.version6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +59,7 @@ public class EmployeeRoster {
                 return target;
             }
         }
-        return new Employee();
+        return null;
     }
 
     public int countEmpType(String type){
@@ -108,20 +108,8 @@ public class EmployeeRoster {
         return target.getClass().getSimpleName().replaceAll("(.)([A-Z])","$1 $2");
     }
 
-    private double computeSalary(Employee target){
-        double salary;
-        switch(getEmpType(target)){
-            case "Hourly Employee" : salary = ((HourlyEmployee)target).computeSalary(); break;
-            case "Piece Worker Employee" : salary = ((PieceWorkerEmployee)target).computeSalary(); break;
-            case "Base Plus Commission Employee" : salary = ((BasePlusCommissionEmployee)target).computeSalary(); break;
-            case "Commission Employee" : salary = ((CommissionEmployee)target).computeSalary(); break;
-            default : salary = 0.0;
-        }
-        return salary;
-    }
-
     private void displayEmployee(Employee target){
         String format = "%3d | %-35s | %-30s | %-10.2f\n";
-        System.out.printf(format,target.getEmpID(),target.getEmpName(),getEmpType(target),computeSalary(target));
+        System.out.printf(format,target.getEmpID(),target.getEmpName(),getEmpType(target),target.computeSalary());
     }
 }

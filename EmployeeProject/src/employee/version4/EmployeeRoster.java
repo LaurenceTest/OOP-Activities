@@ -82,27 +82,15 @@ public class EmployeeRoster {
     }
     
     public void displayAllEmployees(){
-        StringBuilder displayString;
         for(int i = 0; i < count; i++){
-            displayString = new StringBuilder();
-            displayString.append(String.format("%3d",roster[i].getEmpID()) + " | ");
-            displayString.append(String.format("%-35s",roster[i].getEmpName()) + " | ");
-            displayString.append(String.format("%-30s",getEmpType(roster[i])) + " | ");
-            displayString.append(String.format("%-10.2f",computeSalary(roster[i])));
-            System.out.println(displayString);
+            displayEmployee(roster[i]);
         }
     }
 
     public void displayTypeEmployees(String type){
-        StringBuilder displayString;
         for(int i = 0; i < count; i++){
             if(getEmpType(roster[i]).equals(type)){
-                displayString = new StringBuilder();
-                displayString.append(String.format("%3d",roster[i].getEmpID()) + " | ");
-                displayString.append(String.format("%-35s",roster[i].getEmpName()) + " | ");
-                displayString.append(String.format("%-30s",getEmpType(roster[i])) + " | ");
-                displayString.append(String.format("%-10.2f",computeSalary(roster[i])));
-                System.out.println(displayString);
+                displayEmployee(roster[i]);
             }
         }
     }
@@ -137,10 +125,15 @@ public class EmployeeRoster {
         switch(getEmpType(target)){
             case "Hourly Employee" : salary = ((HourlyEmployee)target).computeSalary(); break;
             case "Piece Worker Employee" : salary = ((PieceWorkerEmployee)target).computeSalary(); break;
-            case "Base Commission Employee" : salary = ((BasePlusCommissionEmployee)target).computeSalary(); break;
+            case "Base Plus Commission Employee" : salary = ((BasePlusCommissionEmployee)target).computeSalary(); break;
             case "Commission Employee" : salary = ((CommissionEmployee)target).computeSalary(); break;
             default : salary = 0.0;
         }
         return salary;
+    }
+
+    private void displayEmployee(Employee target){
+        String format = "%3d | %-35s | %-30s | %-10.2f\n";
+        System.out.printf(format,target.getEmpID(),target.getEmpName(),getEmpType(target),computeSalary(target));
     }
 }

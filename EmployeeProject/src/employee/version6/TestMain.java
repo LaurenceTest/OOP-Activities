@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package employee.version5;
+package employee.version6;
 import java.util.Date;
 
 /**
@@ -25,8 +25,7 @@ public class TestMain {
         roster.addEmployee(hourEmp);
         roster.addEmployees(pieWorkEmp,commEmp,baseCommEmp,hourEmp2,hourEmp3,pieWorkEmp2,baseCommEmp2,baseCommEmp3);
         roster.displayAllEmployees();
-        System.out.println(roster.removeEmployee(7).toString());
-        
+        // roster.removeEmployee(7);
         // roster.displayAllEmployees();
         // roster.displayTypeEmployees("Hourly Employee");
         // roster.displayTypeEmployees("Piece Worker Employee");

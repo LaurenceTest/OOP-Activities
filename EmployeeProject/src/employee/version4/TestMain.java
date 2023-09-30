@@ -24,7 +24,7 @@ public class TestMain {
         EmployeeRoster roster = new EmployeeRoster();
         roster.addEmployee(hourEmp);
         roster.addEmployees(pieWorkEmp,commEmp,baseCommEmp,hourEmp2,hourEmp3,pieWorkEmp2,baseCommEmp2,baseCommEmp3);
-        // roster.displayAllEmployees();
+        roster.displayAllEmployees();
         // roster.displayTypeEmployees("Hourly Employee");
         // roster.displayTypeEmployees("Piece Worker Employee");
         // roster.displayTypeEmployees("Commission Employee");
